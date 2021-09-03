@@ -20,6 +20,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//PRODUTOS
 Route::get('/Produtos/index', 'ProdutosController@index')->name('index');
+Route::get('/Produtos/add', 'ProdutosController@store')->name('add');
+
+// CLIENTES
+Route::get('/Clientes/index', 'ClientesController@index');
+Route::get('/Clientes/add', 'ClientesController@store')->name('clientes.store');
 
 
