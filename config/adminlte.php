@@ -280,9 +280,19 @@ return [
         ],
         [
             'text' => 'Pedidos de Compra',
-            'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-cart-arrow-down',
+            'submenu' => [
+                [
+                    'text' => 'Visualizar',
+                    'url'  => 'PedidosCompras/index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => 'PedidosCompras/add',
+                ],
+            ],
         ],
+        
         // [
         //     'text'    => '',
         //     'icon'    => 'fas fa-fw fa-share',
