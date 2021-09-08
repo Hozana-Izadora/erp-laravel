@@ -22,11 +22,15 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //PRODUTOS
-Route::get('/Produtos', 'ProdutosController@index')->name('produtos.index');
+Route::get('/Produtos/index', 'ProdutosController@index')  ->name('produtos.index');
+Route::get('/Produtos/add',   'ProdutosController@create') ->name('produtos.add');
+Route::get('/Produtos/store', 'ProdutosController@store')  ->name('produtos.insert@get');
+Route::post('/Produtos/store', 'ProdutosController@store') ->name('produtos.insert@post');
 
 // CLIENTES
-Route::get('/Clientes/index', 'ClientesController@index');
-Route::get('/Clientes/add', 'ClientesController@create')->name('cliente.add');
-Route::post('/Clientes/store', 'ClientesController@store');
+Route::get('/Clientes/index', 'ClientesController@index')  ->name('cliente.index');
+Route::get('/Clientes/add',   'ClientesController@create') ->name('cliente.add');
+Route::get('/Clientes/store', 'ClientesController@store')  ->name('cliente.insert@get'); 
+Route::post('/Clientes/store', 'ClientesController@store') ->name('cliente.insert@post');
 
 

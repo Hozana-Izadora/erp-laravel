@@ -9,14 +9,14 @@
         </div>
         <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-                <li class="breadcrumb-item"><a href="#">Produtos</a></li>
+                <li class="breadcrumb-item"><a href="#">Pedidos de Compras</a></li>
                 <li class="breadcrumb-item active">Cadastrar</li>
             </ol>
         </div>
     </div>
 
     <div class="card card-secundary">
-        <form action="{{url('Produtos/store')}}" method="POST">
+        <form action="{{url('PedidosCompra/store')}}" method="POST">
             @csrf
             <div class="card-body">
                 <div class="form-group">

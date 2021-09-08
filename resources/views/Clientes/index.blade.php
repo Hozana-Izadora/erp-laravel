@@ -1,4 +1,4 @@
-@extends('adminlte::page')
+@extends('adminlte::page') 
 
 @section('content')
 <div class="container-fluid">
@@ -35,8 +35,8 @@
             <td>{{$cliente->id_cliente}}</td>
             <td>{{$cliente->nome}}</td>
             <td>{{ $cliente->nascimento }}</td>
-            <td>{{ $cliente->cpf}}</td>
             <td>{{ $cliente->telefone}}</td>
+            <td>{{ $cliente->cpf}}</td>
           </tr>
           @endforeach
         </table>

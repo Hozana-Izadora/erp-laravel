@@ -10,7 +10,7 @@ use function Psy\debug;
 
 class ClientesController extends Controller
 {
-   
+
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +19,7 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes = Clientes::All();
-        return view('Clientes/index',compact('clientes'));
+        return view('Clientes/index', compact('clientes'));
     }
 
     /**
@@ -42,9 +42,8 @@ class ClientesController extends Controller
     {
 
         $cliente = Clientes::create($request->all());
-        if ($cliente) {
-            return view('Clientes/index');
-        }
+
+        return redirect('Clientes/index');
     }
 
     /**

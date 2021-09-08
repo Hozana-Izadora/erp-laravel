@@ -252,16 +252,34 @@ return [
         // ['header' => 'account_settings'],
         [
             'text' => 'Clientes',
-            'url'  => 'Clientes/add',
             'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Visualizar',
+                    'url'  => 'Clientes/index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => 'Clientes/add',
+                ],
+            ],
         ],
         [
             'text' => 'Produtos',
-            'url'  => 'Produtos/index',
             'icon' => 'fas fa-fw fa-tags',
+            'submenu' => [
+                [
+                    'text' => 'Visualizar',
+                    'url'  => 'Produtos/index',
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url'  => 'Produtos/add',
+                ],
+            ],
         ],
         [
-            'text' => 'Pedidos do Compra',
+            'text' => 'Pedidos de Compra',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-cart-arrow-down',
         ],
