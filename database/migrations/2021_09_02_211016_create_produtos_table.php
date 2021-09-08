@@ -17,7 +17,7 @@ class CreateProdutosTable extends Migration
             $table->id('id_produto');
             $table->string('nome');
             $table->integer('em_estoque');
-            $table->boolean('ativo');
+            $table->boolean('ativo')->nullable(false);
             $table->timestamps();
         });
     }

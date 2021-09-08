@@ -12,4 +12,6 @@ class Produtos extends Model
         'nome','em_estoque','ativo'
     ];
     protected $table = 'produtos';
+
+    
 }

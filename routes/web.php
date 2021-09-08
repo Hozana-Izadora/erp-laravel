@@ -35,6 +35,8 @@ Route::post('/Clientes/store', 'ClientesController@store') ->name('cliente.inser
 
 //PEDIDOS COMPRAS
 Route::get('/PedidosCompras/show/{id}','PedidosComprasController@show') ->name('pedidosCompras.show');
+Route::get('/PedidosCompras/add',   'PedidosComprasController@create')            ->name('pedidosCompras.add');
+
 
 
 

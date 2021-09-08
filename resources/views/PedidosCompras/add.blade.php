@@ -21,7 +21,8 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Nome do Produto</label>
-                    <input type="text" class="form-control" name="nome">
+                    {{produtos}}
+                    <!-- {!! Form::select('produto_id', $produtos, ['class' => 'form-control']) !!} -->
                 </div>
                 <div class="form-group">
                     <label>Quantidade em estoque</label>

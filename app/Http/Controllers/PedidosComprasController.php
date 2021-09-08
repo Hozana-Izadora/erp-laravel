@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\PedidosCompras;
+use App\Produtos;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\DB;
 
 class PedidosComprasController extends Controller
 {
@@ -24,7 +27,8 @@ class PedidosComprasController extends Controller
      */
     public function create()
     {
-        //
+        $produtos = Produtos::All();
+        return view('PedidosCompras/add', compact('produtos'));
     }
 
     /**
@@ -46,11 +50,13 @@ class PedidosComprasController extends Controller
      */
     public function show($id)
     {
-        $pedidosCompras = PedidosCompras::where('id_pedido_compra',$id)->first();
-
-        $produtos = $pedidosCompras->Produtos();
-return $produtos;
-      
+        $pedidoCompras = DB::table('pedidos_compras')->where('nr_pedido', $id)->get();
+        // $pedidoCompras = PedidosCompras::All()->where('nr_pedido', $id)->with('produtos');
+        // $produtos = $pedidoCompras->with('produtos')->where('nr_pedido', $id);
+        // foreach($produtos as $produto){
+        //     echo $produto->
+        // }
+        return $pedidoCompras;
     }
 
     /**
