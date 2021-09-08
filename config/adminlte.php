@@ -252,12 +252,12 @@ return [
         // ['header' => 'account_settings'],
         [
             'text' => 'Clientes',
-            'url'  => 'admin/settings',
+            'url'  => 'Clientes/add',
             'icon' => 'fas fa-fw fa-user',
         ],
         [
             'text' => 'Produtos',
-            'url'  => 'admin/settings',
+            'url'  => 'Produtos/index',
             'icon' => 'fas fa-fw fa-tags',
         ],
         [

@@ -4,10 +4,13 @@ namespace App\Http\Controllers;
 
 use App\Clientes;
 use Illuminate\Http\Request;
-use App\Validator;
+use Illuminate\Support\Facades\Validator;
+
+use function Psy\debug;
 
 class ClientesController extends Controller
 {
+   
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +18,8 @@ class ClientesController extends Controller
      */
     public function index()
     {
-        //
+        $clientes = Clientes::All();
+        return view('Clientes/index',compact('clientes'));
     }
 
     /**
@@ -36,21 +40,11 @@ class ClientesController extends Controller
      */
     public function store(Request $request)
     {
-        //Validar dados
-        $validator = Validator::make($request->all(),[
-            'nome' => 'required',
-            'email' => 'required',
-            'cpf' => 'required'
-            
-        ]);
-        $Clientes = new Clientes;
-        $Clientes->nome  = $request->input('nome');
-        $Clientes->email = $request->input('email');
-        $Clientes->cpf   = $request->input('cpf');
-        $Clientes->save();
 
-        return redirect('Clientes/index');
-
+        $cliente = Clientes::create($request->all());
+        if ($cliente) {
+            return view('Clientes/index');
+        }
     }
 
     /**

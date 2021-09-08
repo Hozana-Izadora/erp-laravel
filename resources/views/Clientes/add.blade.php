@@ -1,44 +1,59 @@
 @extends('adminlte::page')
 @section('content')
-<div class="card card-primary">
-    <div class="card-header">
-        <h3 class="card-title">Quick Example</h3>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js" integrity="sha256-yE5LLp5HSQ/z+hJeCqkz9hdjNkk1jaiGG0tDCraumnA=" crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function() {
+        $('#telefone').mask('(00) 00000-0000')
+    })
+</script>
+<div class="container-fluid">
+    <div class="row mb-2">
+        <br>
+        <div class="col-sm-6">
+            <h3>Cadastrar Clientes</h3>
+        </div>
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Clientes</a></li>
+                <li class="breadcrumb-item active">Cadastrar</li>
+            </ol>
+        </div>
     </div>
-    <!-- /.card-header -->
-    <!-- form start -->
-    <form action="{{route(clientes.store)}}" method="POST">
-        @csrf
-        <div class="card-body">
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <div class="input-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                    </div>
-                    <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                    </div>
-                </div>
-            </div>
-            <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-        </div>
-        <!-- /.card-body -->
 
-        <div class="card-footer">
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
+    <div class="card card-secundary">
+        <form action="{{url('Clientes/store')}}" method="POST">
+            @csrf
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Nome do Cliente</label>
+                    <input type="text" class="form-control" name="nome">
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email">
+                </div>
+                <div class="form-group">
+                    <label>Data de nascimento</label>
+                    <input type="date" class="form-control" name="nascimento">
+                </div>
+                <div class="form-group">
+                    <label>CPF</label>
+                    <input type="text" class="form-control" name="cpf">
+                </div>
+                <div class="form-group">
+                    <label>Telefone (Wpp)</label>
+                    <input type="text" class="form-control" name="telefone" id="telefone">
+                </div>
+
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+    </div>
 </div>
+
 @endsection
